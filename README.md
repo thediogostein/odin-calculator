@@ -1,2 +1,7 @@
 # odin-calculator
-This is the Project: Calculator for the Foundations Course
+
+Project Calculator [Foundations] - The Odin Project
+
+This is a Javascript project that I coded for The Odin Project, Foundations Course.
+
+You can check the requirements at https://www.theodinproject.com/lessons/foundations-calculator
