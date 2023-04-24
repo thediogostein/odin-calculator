@@ -1,20 +1,63 @@
-const btnOne = document.querySelector("#btn-1");
-const btnTwo = document.querySelector("#btn-2");
-const btnThree = document.querySelector("#btn-3");
-const btnFour = document.querySelector("#btn-4");
-const btnFive = document.querySelector("#btn-5");
-const btnSix = document.querySelector("#btn-6");
-const btnSeven = document.querySelector("#btn-7");
-const btnEight = document.querySelector("#btn-8");
-const btnNine = document.querySelector("#btn-9");
-const btnZero = document.querySelector("#btn-0");
+// -- GLOBAL VARIABLES
+
+// -- Elements
 const outPrevious = document.querySelector("#out-previous");
 const outCurrent = document.querySelector("#out-current");
+const btnAc = document.querySelector("#btn-ac");
+const btnBackspace = document.querySelector("#btn-backspace");
+const btnAdd = document.querySelector("#btn-add");
+const btnSub = document.querySelector("#btn-subtract");
+const btnMul = document.querySelector("#btn-multiply");
+const btnDiv = document.querySelector("#btn-divide");
+const btnEquals = document.querySelector("#btn-equals");
 
+const btn = document.querySelectorAll(".btn-number");
 
-let num1 = 0;
-let num2 = 0;
-let operator;
+// -- BUTTONS -- event listeners
+
+// -- 0-9
+btn.forEach((item) => {
+  item.addEventListener("click", (event) => {
+    // outCurrent.innerText += +event.target.innerText;
+    let num = event.target.innerText;
+    outCurrent.innerText += num;
+  });
+});
+
+// -- AC
+btnAc.addEventListener("click", () => {
+  outCurrent.innerText = "";
+});
+
+// -- Backspace
+btnBackspace.addEventListener("click", () => {
+  console.log("backspace");
+});
+
+// -- Add
+btnAdd.addEventListener("click", () => {
+  console.log("add");
+});
+
+// -- Subtract
+btnSub.addEventListener("click", () => {
+  console.log("subtract");
+});
+
+// -- Multiply
+btnMul.addEventListener("click", () => {
+  console.log("multiply");
+});
+
+// -- Divide
+btnDiv.addEventListener("click", () => {
+  console.log("divide");
+});
+
+// -- Equals
+btnEquals.addEventListener("click", () => {
+  console.log("equals");
+});
 
 function add(num1, num2) {
   console.log(num1 + num2);
