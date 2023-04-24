@@ -37,17 +37,32 @@ main {
   background-color: grey;
 }
 
+#out-previous,
+#out-current {
+  text-align: right;
+}
+
+/* #out-previous {
+}
+
+#out-current {
+} */
+
 button {
   font-size: 2rem;
   font-family: inherit;
 }
 
-.btn-ac {
+button:hover {
+  background-color: aquamarine;
+}
+
+#btn-ac {
   grid-column-start: 1;
   grid-column-end: 3;
 }
 
-.btn-zero {
+#btn-0 {
   grid-column-start: 1;
   grid-column-end: 3;
 }
