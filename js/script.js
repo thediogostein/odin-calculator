@@ -1,6 +1,7 @@
 let a = "";
 let b = "";
 let operator = "";
+let divisionByZero = false;
 
 const btnNumbers = document.querySelectorAll(".btn-number");
 const btnOperators = document.querySelectorAll(".btn-operator");
@@ -10,21 +11,31 @@ let outResult = document.querySelector("#out-result");
 
 btnNumbers.forEach((btnNumber) => {
   btnNumber.addEventListener("click", () => {
-    if (operator === "") {
-      a += btnNumber.innerText;
-      updateDisplay();
-    } else {
-      b += btnNumber.innerText;
-      updateDisplay();
+    if (divisionByZero === false) {
+      if (operator === "") {
+        a += btnNumber.innerText;
+        updateDisplay();
+      } else {
+        b += btnNumber.innerText;
+        updateDisplay();
+      }
     }
   });
 });
 
 btnOperators.forEach((btnOperator) => {
   btnOperator.addEventListener("click", () => {
-    if (a !== "") {
-      operator = btnOperator.value;
-      updateDisplay();
+    if (divisionByZero === false) {
+      if (a !== "" && b !== "" && operator !== "") {
+        const total = calculate(a, b, operator);
+        outResult.innerText = total;
+        a = total;
+        b = "";
+      }
+      if (a !== "") {
+        operator = btnOperator.value;
+        updateDisplay();
+      }
     }
   });
 });
@@ -53,6 +64,7 @@ function allClear() {
   b = "";
   operator = "";
   outResult.innerText = "";
+  divisionByZero = false;
 }
 
 // calculate
@@ -92,5 +104,10 @@ function multiply(a, b) {
 
 // divide
 function divide(a, b) {
-  return a / b;
+  if (b === 0) {
+    divisionByZero = true;
+    return "Can't divide by 0";
+  } else {
+    return (a / b) % 1 !== 0 ? (a / b).toFixed(4) : a / b;
+  }
 }
