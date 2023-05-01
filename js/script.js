@@ -10,10 +10,8 @@ const btnOperators = document.querySelectorAll(".btn-operator");
 const btnEquals = document.querySelector("#btn-equals");
 const btnAllClear = document.querySelector("#btn-all-clear");
 const btnDecimal = document.querySelector("#btn-decimal");
+const btnBackspace = document.querySelector("#btn-backspace");
 let outResult = document.querySelector("#out-result");
-
-//criar variaveis para o backspace button e o decimal number
-//adicionar funcionalidades
 
 btnNumbers.forEach((btnNumber) => {
   btnNumber.addEventListener("click", () => {
@@ -62,12 +60,12 @@ btnAllClear.addEventListener("click", () => {
 });
 
 btnDecimal.addEventListener("click", () => {
-  if (operator === "" && decimalA === false) {
+  if (operator === "" && decimalA === false && divisionByZero === false) {
     a += btnDecimal.innerText;
     decimalA = true;
     updateDisplay();
   }
-  if ((operator !== "") & (decimalB === false)) {
+  if (operator !== "" && decimalB === false && divisionByZero === false) {
     b += btnDecimal.innerText;
     decimalB = true;
     updateDisplay();
