@@ -61,7 +61,7 @@ button:hover {
 
 #btn-all-clear {
   grid-column-start: 1;
-  grid-column-end: 4;
+  grid-column-end: 3;
 }
 
 #btn-0 {
@@ -69,7 +69,7 @@ button:hover {
   grid-column-end: 3;
 }
 
-#btn-equals {
+/* #btn-equals {
   grid-column-start: 3;
   grid-column-end: 5;
-}
+} */
